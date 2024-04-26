@@ -22,4 +22,16 @@ class Login {
     }
 }
 
+public class Main {
+    public static void main(String[] args) {
+        Login login = new Login("usuario", "senha");
 
+        try {
+            if (login.fazer_login("usuario", "senha_correta")) {
+                System.out.println("Login realizado com sucesso.");
+            }
+        } catch (LoginInvalidoException e) {
+            System.out.println("Erro ao fazer login: " + e.getMessage());
+        }
+    }
+}
